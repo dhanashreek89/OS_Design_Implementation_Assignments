@@ -1,0 +1,74 @@
+This file contains guide which will explain steps involved in order to install, use and exit qShell.
+
+Package Contents:
+=================
+1.qShell-src			- Contain qShell source code
+2.VM-Group-7-Minix3-Project-1	- Contain VMWare Player Image [Created with VMWare Player Linux version 6.0.3]
+3.Group-7-DesignDocument.pdf	- qShell Design Document
+4.Group-7-qShell_TestCases.pdf	- qShell Test Cases
+5.VM-Credentials		- Contains VM Credentials
+
+The qShell is already installed in the VMWare Player Minix Image (at '/usr/local/bin/qsh').
+
+Running from VMWare Player Image:
+=================================
+1.Open the VMWare Player image
+2.Login to Minix (Username: root Password: root123)
+3.From default shell run:
+  $ qsh
+
+You can also build, install and then run it as:
+
+Installing from source:
+=======================
+From root directory 'qShell-src', run:
+[Source code is also present at '/usr/src/commands/qShell' in VM Image]
+$ ./configure
+$ make
+$ make install
+
+Uninstalling qShell:
+====================
+From root directory 'qShell-src', run:
+# make uninstall
+
+
+Running commands on qShell:
+==========================
+qShell handles following commands.
+
+	a) Basic shell commands that reside in /bin and /usr/bin directory.
+	 e.g. -ls 
+	      -pwd
+              -date
+	      -uname
+	      -who etc	
+
+	b) You can also run commands with several options.
+	  e.g.
+	      -ls -ltr
+	      -date -u
+	      -uname -r
+
+        c) You can also redirect output, input and append files.
+	   e.g.
+	      -ls > file.txt
+              -wc -l < file.txt
+	      -ls -ltr >> file.txt
+	d) You can run commands in background. 
+	   e.g. 
+	      - date &
+	      - ls &
+
+	e) Run conditional commands with if then else or && and || operators.
+
+	      - if ls; then date;else pwd;fi;
+	      - ls && pwd (if ls is executed then and only then execute pwd)
+	      - ls || pwd (Execute either ls or pwd)
+
+	f) Executing alias command
+	      -alias "list=ls"
+
+	g) You can also enable alarm by typing 'alarmon'
+	   and after 5 seconds you will be prompted if you wish to kill the process.You can kill the process by typing 'y' and let it run by typing 'n'
+	h) type exit to exit the shell.

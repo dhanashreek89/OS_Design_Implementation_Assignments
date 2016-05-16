@@ -1,0 +1,22 @@
+The qShell is already installed in the VMWare Player Minix Image (at '/usr/local/bin/qsh').
+
+Running from VMWare Player Image:
+=================================
+1.Open the VMWare Player image
+2.Login to Minix (Username: root Password: root123)
+3.From default shell run:
+  $ qsh
+
+You can also build, install and then run it as:
+
+Installing from source:
+=======================
+From root directory 'qShell', run:
+$ ./configure
+$ make
+$ make install
+
+Uninstalling
+============
+From root directory 'qShell', run:
+# make uninstall

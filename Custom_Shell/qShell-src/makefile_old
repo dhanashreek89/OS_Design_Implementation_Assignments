@@ -1,0 +1,21 @@
+CC=gcc
+
+all: Main
+
+Main: Main.o Exec.o Handler.o Util.o
+	$(CC) Main.o Exec.o Handler.o Util.o -o qShell
+
+Main.o: Main.c
+	$(CC) -c Main.c
+
+Exec.o: Exec.c
+	$(CC) -c Exec.c
+
+Handler.o: Handler.c
+	$(CC) -c Handler.c
+
+Util.o: Util.c
+	$(CC) -c Util.c
+	
+clean:
+	rm -rf *o qShell
